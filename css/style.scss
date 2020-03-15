@@ -1,0 +1,92 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.whatItIs {
+    text-align: center;
+    padding-top: 10vh;
+
+    p {
+        opacity: 0.6;
+        font-style: italic;
+        padding: 10px;
+    }
+}
+
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    padding: 5rem;
+    margin-top: 10vh;
+}
+
+.box1,
+.box2,
+.box3,
+.box4 {
+    border: 2px solid #fff;
+    padding: 2rem;
+
+    h1 {
+        border-bottom: 2px solid #fff;
+        margin-bottom: 1rem;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+}
+
+.heart {
+    font-size: 2rem;
+    color: rgb(165, 165, 165);
+    cursor: pointer;
+    padding-top: 1rem;
+    transition: ease-in-out 200ms;
+}
+
+.liked {
+    color: rgb(255, 29, 29);
+    animation: 400ms like alternate ease-in-out;
+    text-shadow: 0px 0px 8px rgba(206, 0, 0, 0.67);
+
+}
+
+@keyframes like {
+    0% {
+        transform: scale(1)
+    }
+
+    25% {
+        transform: scale(2)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+@media (max-width: 1100px) {
+    .boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .boxes {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 650px) {
+    .boxes {
+        grid-template-columns: 1fr
+    }
+}
